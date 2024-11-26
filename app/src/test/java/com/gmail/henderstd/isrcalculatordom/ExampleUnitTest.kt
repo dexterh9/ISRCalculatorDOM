@@ -1,4 +1,4 @@
-package com.gmail.henderstd.ISRCalculatorDOM
+package com.gmail.henderstd.isrcalculatordom
 
 import org.junit.Test
 

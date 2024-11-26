@@ -1,4 +1,4 @@
-package com.gmail.henderstd.ISRCalculatorDOM.ui.theme
+package com.gmail.henderstd.isrcalculatordom.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

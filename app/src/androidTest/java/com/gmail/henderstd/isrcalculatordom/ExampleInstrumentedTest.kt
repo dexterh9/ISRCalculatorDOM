@@ -1,4 +1,4 @@
-package com.gmail.henderstd.ISRCalculatorDOM
+package com.gmail.henderstd.isrcalculatordom
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

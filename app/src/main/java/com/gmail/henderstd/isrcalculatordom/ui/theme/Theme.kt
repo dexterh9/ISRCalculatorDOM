@@ -1,6 +1,5 @@
-package com.gmail.henderstd.ISRCalculatorDOM.ui.theme
+package com.gmail.henderstd.isrcalculatordom.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

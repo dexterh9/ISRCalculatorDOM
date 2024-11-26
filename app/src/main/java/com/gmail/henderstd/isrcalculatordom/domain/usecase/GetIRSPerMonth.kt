@@ -1,9 +1,9 @@
-package com.gmail.henderstd.ISRCalculatorDOM.domain.usecase
+package com.gmail.henderstd.isrcalculatordom.domain.usecase
 
 class GetIRSPerMonth {
     operator fun invoke(irsDiscount:Double, salary:Double,rangeLowEnd:Double,extraDiscount : Double) : Double
     {
-        return ((((salary*12)-rangeLowEnd)*irsDiscount)+extraDiscount)/12;
+        return ((((salary*12)-rangeLowEnd)*irsDiscount)+extraDiscount)/12
     }
 
 }
