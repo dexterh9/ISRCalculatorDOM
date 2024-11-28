@@ -112,6 +112,7 @@ class SalaryDiscountsRepository {
     init{
         //check saved files on default
 
+
     }
 
 }

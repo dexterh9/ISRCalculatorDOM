@@ -13,9 +13,8 @@
         android:theme="@style/Theme.CalculadoraDeImpuestoSobreLaRentaISRRD"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.gmail.henderstd.isrcalculatordom.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.CalculadoraDeImpuestoSobreLaRentaISRRD">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
