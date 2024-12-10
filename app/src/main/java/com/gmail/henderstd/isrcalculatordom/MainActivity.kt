@@ -10,7 +10,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.gmail.henderstd.isrcalculatordom.presentation.view.ISRCalculatorView
 import com.gmail.henderstd.isrcalculatordom.presentation.viewmodel.ISRCalculatorDOMViewModel
 
-class MainActivity : ComponentActivity() {
+public class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

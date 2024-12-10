@@ -2,7 +2,7 @@ package com.gmail.henderstd.isrcalculatordom.data.repository
 
 import com.gmail.henderstd.isrcalculatordom.data.model.ISRRangesModel
 
-class SalaryDiscountsRepository {
+public class SalaryDiscountsRepository {
 
 
     /*user salary, current discounts per period*/

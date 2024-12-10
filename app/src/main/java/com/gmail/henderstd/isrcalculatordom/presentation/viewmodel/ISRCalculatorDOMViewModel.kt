@@ -8,7 +8,7 @@ import com.gmail.henderstd.isrcalculatordom.domain.usecase.GetIRSPerMonth
 import com.gmail.henderstd.isrcalculatordom.domain.usecase.GetSDSPerMonth
 import com.gmail.henderstd.isrcalculatordom.domain.usecase.GetYearlyRate
 
-open class ISRCalculatorDOMViewModel : ViewModel() {
+public open class ISRCalculatorDOMViewModel : ViewModel() {
 
     private val  salaryRepo=SalaryDiscountsRepository()
     private val getAFP=GetAFPPerMonth()
@@ -16,7 +16,7 @@ open class ISRCalculatorDOMViewModel : ViewModel() {
     private val getSDS=GetSDSPerMonth()
     private val getYearlyRate= GetYearlyRate()
 
-    fun performCalculation(salary:Double){
+    fun performCalculation(salary: Double){
 
         salaryRepo.salary=salary
 
@@ -43,7 +43,6 @@ open class ISRCalculatorDOMViewModel : ViewModel() {
 
     }
 
-    fun getSalary():Double=salaryRepo.salary
 
     fun getSalaryCurrentAFPDiscountMonthly():Double=salaryRepo.salaryCurrentAFPDiscountMonthly
 
