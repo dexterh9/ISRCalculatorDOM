@@ -27,12 +27,13 @@ fun ISRCalculatorView(viewmodel: ISRCalculatorDOMViewModel) {
     var afpMonthly by remember { mutableDoubleStateOf(0.00) }
     var sdsMonthly by remember { mutableDoubleStateOf(0.00) }
     var irsMonthly by remember { mutableDoubleStateOf(0.00) }
+    var netSalaryMonthly by remember { mutableDoubleStateOf(0.00) }
 
 
 
     Column (
-        modifier=Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
+        modifier=Modifier.fillMaxSize().padding(top=20.dp),
+        verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         TextField(value = salary,
@@ -43,6 +44,7 @@ fun ISRCalculatorView(viewmodel: ISRCalculatorDOMViewModel) {
                 afpMonthly=viewmodel.getSalaryCurrentAFPDiscountMonthly()
                 sdsMonthly=viewmodel.getSalaryCurrentSDSDiscountMonthly()
                 irsMonthly=viewmodel.getSalaryCurrentIRSDiscountMonthly()
+                netSalaryMonthly=viewmodel.getNetSalaryMonthly()
 
             }else{
                 salary=it
@@ -72,6 +74,13 @@ fun ISRCalculatorView(viewmodel: ISRCalculatorDOMViewModel) {
         TextField(value = irsMonthly.toString(),
             onValueChange = { },
             label={ Text("IRS Deducción Mensual") },
+            enabled = false,
+            modifier = Modifier.fillMaxWidth().padding(16.dp)
+        )
+
+        TextField(value = netSalaryMonthly.toString(),
+            onValueChange = { },
+            label={ Text("Salario neto") },
             enabled = false,
             modifier = Modifier.fillMaxWidth().padding(16.dp)
         )

@@ -1,5 +1,6 @@
 package com.gmail.henderstd.isrcalculatordom.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 
 import com.gmail.henderstd.isrcalculatordom.data.repository.SalaryDiscountsRepository
@@ -22,9 +23,12 @@ public open class ISRCalculatorDOMViewModel : ViewModel() {
 
         for(range in salaryRepo.salaryRanges){
 
-            if(salary>=range.rangeLowEnd && salary<=range.rangeHighEnd){
+            if(salary*12>=range.rangeLowEnd && salary*12<=range.rangeHighEnd){
 
                 salaryRepo.salaryCurrentAFPDiscountMonthly=getAFP(salaryRepo.afpDiscountPercentage,salaryRepo.salary)
+
+                Log.d("MYPP",salaryRepo.salaryCurrentAFPDiscountMonthly.toString())
+
                 salaryRepo.salaryCurrentSDSDiscountMonthly=getSDS(salaryRepo.sdsDiscountPercentage,salaryRepo.salary)
                 salaryRepo.salaryCurrentIRSDiscountMonthly=getIRS(range.rangeDiscountRate,salaryRepo.salary,range.rangeLowEnd,range.extraDiscount)
 
@@ -35,6 +39,9 @@ public open class ISRCalculatorDOMViewModel : ViewModel() {
 
                 salaryRepo.totalDiscountsPerMonth=salaryRepo.salaryCurrentAFPDiscountMonthly+salaryRepo.salaryCurrentSDSDiscountMonthly+salaryRepo.salaryCurrentIRSDiscountMonthly
                 salaryRepo.totalDiscountsPerYear=salaryRepo.salaryCurrentAFPDiscountYearly+salaryRepo.salaryCurrentSDSDiscountYearly+salaryRepo.salaryCurrentIRSDiscountYearly
+
+                salaryRepo.salary_net_monthly=salaryRepo.salary-salaryRepo.totalDiscountsPerMonth;
+                salaryRepo.salary_net_yearly=salaryRepo.salary_net_monthly*12-salaryRepo.totalDiscountsPerYear;
 
                 break
             }
@@ -49,6 +56,7 @@ public open class ISRCalculatorDOMViewModel : ViewModel() {
     fun getSalaryCurrentSDSDiscountMonthly():Double=salaryRepo.salaryCurrentSDSDiscountMonthly
 
     fun getSalaryCurrentIRSDiscountMonthly():Double=salaryRepo.salaryCurrentIRSDiscountMonthly
+    fun getNetSalaryMonthly():Double=salaryRepo.salary_net_monthly
 
     fun getSalaryCurrentAFPDiscountYearly():Double=salaryRepo.salaryCurrentAFPDiscountYearly
 

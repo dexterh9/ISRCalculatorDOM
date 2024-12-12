@@ -15,6 +15,23 @@ public class SalaryDiscountsRepository {
         }
 
 
+    private var _salary_net_monthly : Double = 0.0
+
+    var salary_net_monthly: Double
+        get() = _salary_net_monthly
+        set(value) {
+            _salary_net_monthly = value
+        }
+
+    private var _salary_net_yearly : Double = 0.0
+
+    var salary_net_yearly: Double
+        get() = _salary_net_yearly
+        set(value) {
+            _salary_net_yearly = value
+        }
+
+
     private var _salaryCurrentAFPDiscountMonthly : Double = 0.0
 
     var salaryCurrentAFPDiscountMonthly: Double
